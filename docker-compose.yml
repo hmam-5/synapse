@@ -1,0 +1,61 @@
+# ============================================================
+# SYNAPSE: Production Docker Compose
+# Target: DigitalOcean Droplet (164.92.205.65)
+# Services: Next.js App + Nginx Reverse Proxy
+# ============================================================
+
+services:
+  # ---- Next.js Application ----
+  synapse-web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL}
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+    container_name: synapse-web
+    restart: unless-stopped
+    expose:
+      - "3000"
+    environment:
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+    networks:
+      - synapse-net
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # ---- Nginx Reverse Proxy ----
+  synapse-proxy:
+    image: nginx:1.27-alpine
+    container_name: synapse-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/synapse.conf:/etc/nginx/conf.d/default.conf:ro
+      - certbot-webroot:/var/www/certbot:ro
+    depends_on:
+      synapse-web:
+        condition: service_healthy
+    networks:
+      - synapse-net
+    deploy:
+      resources:
+        limits:
+          memory: 64M
+
+networks:
+  synapse-net:
+    driver: bridge
+
+volumes:
+  certbot-webroot:

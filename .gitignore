@@ -1,0 +1,5 @@
+node_modules/
+.next/
+update.zip
+deploy.tar.gz
+.env.local
