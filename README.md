@@ -32,16 +32,6 @@ Synapse is built upon a robust architecture designed for high availability and e
 - **GitHub Actions**: Automated CI/CD pipeline for deployment.
 
 
-## 📸 Platform Gallery
-
-![Screenshot 1](./docs/images/img1.png)
-![Screenshot 2](./docs/images/img2.png)
-![Screenshot 3](./docs/images/img3.png)
-![Screenshot 4](./docs/images/img4.png)
-![Screenshot 5](./docs/images/img5.png)
-![Screenshot 6](./docs/images/img6.png)
-![Screenshot 7](./docs/images/img7.png)
----
 ## 🛠️ Local Development
 
 ### 1. Clone the repository
