@@ -34,46 +34,13 @@ Synapse is built upon a robust architecture designed for high availability and e
 
 ## 📸 Platform Gallery
 
-### Secure Authentication & OAuth
-Synapse supports seamless enterprise login, including Magic Links and Provider OAuth (like GitLab & GitHub).
-![Synapse Login](./docs/images/login.png)
-
-### GitLab Integration
-Configured seamlessly using GitLab as an OAuth provider to ensure secure developer authentication.
-![GitLab OAuth Setup](./docs/images/gitlab.png)
-
-### Supabase Backend Configuration
-Synapse uses a dedicated Supabase project with automated migrations, RLS, and secure Data APIs.
-![Supabase Project](./docs/images/supabase.png)
-
-### Containerized Deployment
-The entire platform compiles down to a highly optimized, standalone Docker image deployed effortlessly to DigitalOcean.
-![DigitalOcean Docker Build](./docs/images/digitalocean.png)
-
-
-### 1. DigitalOcean Droplet Setup
-Initial setup and installation of Docker Engine on a fresh DigitalOcean VPS for secure, production-grade deployments.
-![DigitalOcean Droplet Setup](./docs/images/img1.png)
-
-### 2. Synapse Dashboard Overview
-The main dashboard provides a summary of projects, tasks, team members, and completion rates for efficient team management.
-![Dashboard Overview](./docs/images/img2.png)
-
-### 3. Supabase Project Creation
-Creating a new Supabase project with secure settings, Data API, and Row Level Security enabled for backend management.
-![Supabase Project Creation](./docs/images/img3.png)
-
-### 4. GitLab OAuth Application Setup
-Registering Synapse as an OAuth application in GitLab for secure authentication and integration.
-![GitLab OAuth Application](./docs/images/img4.png)
-
-### 5. Synapse Login Page
-Modern, enterprise-grade login page supporting multiple authentication providers including GitHub, Google, Bitbucket, and GitLab.
-![Login Page](./docs/images/img5.png)
-
-### 6. Docker Compose Build & Deployment
-Building and deploying the Synapse web application using Docker Compose for a reproducible, containerized environment.
-![Docker Compose Build](./docs/images/img6.png)
+![Screenshot 1](./docs/images/img1.png)
+![Screenshot 2](./docs/images/img2.png)
+![Screenshot 3](./docs/images/img3.png)
+![Screenshot 4](./docs/images/img4.png)
+![Screenshot 5](./docs/images/img5.png)
+![Screenshot 6](./docs/images/img6.png)
+![Screenshot 7](./docs/images/img7.png)
 ---
 ## 🛠️ Local Development
 
